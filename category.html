@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal & Bird Figurines</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .product-card {
+            transition: transform 0.3s ease-in-out;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .price-slider {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- First Section: Navbar for Categories -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Categories</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Serveware</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Dinnerware</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Teaware</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Kitchen Storage</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Second Section: Filters -->
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <button class="btn btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#filterSection">Show Filters</button>
+            <span>96 products</span>
+        </div>
+
+        <div class="collapse mt-3" id="filterSection">
+            <div class="card card-body">
+                <label for="priceRange" class="form-label">Filter by Price: <span id="priceValue">6000</span></label>
+                <input type="range" class="form-range price-slider" id="priceRange" min="2000" max="6000" step="500" value="6000" onchange="filterProducts()">
+            </div>
+        </div>
+    </div>
+
+    <!-- Third Section: Product Listings -->
+    <div class="container mt-4">
+        <div class="row" id="productGrid">
+            <!-- Product 1 -->
+            <div class="col-md-3 product-card" data-price="4800">
+                <div class="card">
+                    <img src="duck.jpg" class="card-img-top" alt="Family of Ducks">
+                    <div class="card-body">
+                        <h5 class="card-title">Family of Ducks - Set of 4</h5>
+                        <p class="card-text">₹4,800.00</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col-md-3 product-card" data-price="2480">
+                <div class="card">
+                    <img src="tropical bird.jpg" class="card-img-top" alt="Tropical Bird">
+                    <div class="card-body">
+                        <h5 class="card-title">Tropical Birds Tabletop Accent</h5>
+                        <p class="card-text">₹2,480.00</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-md-3 product-card" data-price="3640">
+                <div class="card">
+                    <img src="moose.jpg" class="card-img-top" alt="Moose Sculpture">
+                    <div class="card-body">
+                        <h5 class="card-title">Majestic Moose Sculpture</h5>
+                        <p class="card-text">₹3,640.00</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="col-md-3 product-card" data-price="5600">
+                <div class="card">
+                    <img src="tabletop bird.jpg" class="card-img-top" alt="Tropical Bird Small">
+                    <div class="card-body">
+                        <h5 class="card-title">Tropical Birds Tabletop Accent - Small</h5>
+                        <p class="card-text">₹5,600.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterProducts() {
+            var selectedPrice = document.getElementById("priceRange").value;
+            document.getElementById("priceValue").innerText = selectedPrice;
+            var products = document.querySelectorAll(".product-card");
+
+            products.forEach(function(product) {
+                var productPrice = parseInt(product.getAttribute("data-price"));
+                if (productPrice <= selectedPrice) {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
