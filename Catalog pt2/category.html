@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .category-item img {
+            transition: transform 0.3s ease-in-out;
+        }
+        .category-item:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Our Collection</h1>
+        
+        <!-- Categories Section -->
+        <div class="d-flex justify-content-center gap-3 mb-4">
+            <div class="text-center category-item">
+                <img src="Serveware.avif" class="rounded-circle" width="80" height="80" alt="Serveware">
+                <p class="mt-2">Serveware</p>
+            </div>
+            <div class="text-center category-item">
+                <img src="dinnerware.avif" class="rounded-circle" width="80" height="80" alt="Dinnerware">
+                <p class="mt-2">Dinnerware</p>
+            </div>
+            <div class="text-center category-item">
+                <img src="teaware.avif" class="rounded-circle" width="80" height="80" alt="Teaware">
+                <p class="mt-2">Teaware</p>
+            </div>
+            <div class="text-center category-item">
+                <img src="tableware.avif" class="rounded-circle" width="80" height="80" alt="Tableware">
+                <p class="mt-2">Tableware</p>
+            </div>
+        </div>
+        
+        <!-- Product Showcase -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center">
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="vintage 2 tier cake stand.webp" class="card-img-top" alt="Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Vintage Blue & White 2-Tier Cake Stand</h5>
+                        <p class="card-text">₹2,800.00</p>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="scallop 2 tier cake stand.webp" class="card-img-top" alt="Product 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Scallop Blue & White 2-Tier Cake Stand</h5>
+                        <p class="card-text">₹2,800.00</p>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="vintage cake stand.webp" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Vintage Blue & White Cake Stand</h5>
+                        <p class="card-text">₹2,800.00</p>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="pastel teapot.webp" class="card-img-top" alt="Product 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Pastel Harmony Teapot - White</h5>
+                        <p class="card-text">₹1,280.00</p>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
